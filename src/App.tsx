@@ -44,9 +44,9 @@ const App = () => {
   };
 
   return (
-    <div className="sm:w-96 w-56 mx-auto border-2 bg-gradient-to-r from-cyan-200 to-blue-500 rounded-sm bg-gray-200 mt-16  sm:mt-28 justify-center hover:cursor-pointer ">
+    <div className="sm:w-96 w-56 mx-auto border-2 bg-gradient-to-r from-cyan-200 to-blue-500 rounded-sm bg-gray-200 mt-16  sm:mt-28 justify-center  ">
       <h1 className="text-2xl font-bold text-indigo-700">DG Calculator</h1>
-      <div className=" flex mx-1 flex-row-reverse px-5 mb-2 h-10 sm:h-16 text-2xl font-bold items-center sm:text-3xl border border-gray-500 py-4">
+      <div className="hover:hover:cursor-pointer hover:scale-105 object-cover flex mx-1 flex-row-reverse px-5 mb-2 h-10 sm:h-16 text-2xl font-bold items-center sm:text-3xl border border-gray-500 py-4">
         {expression}
       </div>
       <div className="grid grid-cols-3 sm:gap-1 ">
@@ -62,7 +62,7 @@ const App = () => {
             setExpression([""]);
             ringSound();
           }}
-          className="bg-red-500 rounded-md px-4 sm:px-10 py-2 "
+          className="bg-red-500 rounded-md px-4 sm:px-10 py-2 hover:hover:cursor-pointer hover:scale-105 "
         >
           A/C
         </button>
@@ -73,7 +73,7 @@ const App = () => {
             const newExpression = [...expression];
             setExpression(newExpression);
           }}
-          className="bg-yellow-500 rounded-md sm:px-11 px-5 py-2 "
+          className="bg-yellow-500 rounded-md sm:px-11 px-5 py-2 hover:hover:cursor-pointer hover:scale-105 "
         >
           C
         </button>

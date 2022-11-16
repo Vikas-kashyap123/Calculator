@@ -8,7 +8,7 @@ const Button: FC<ButtonProps> = ({ value, onClick }) => {
       <div
         data-cell-index={value}
         onClick={onClick}
-        className="border text-center font-bold text-xl from-bg-cyan-100-to  border-black rounded-md px-3 py-2 w-14 sm:w-20"
+        className="border hover:hover:cursor-pointer hover:scale-105 text-center font-bold text-xl from-bg-cyan-100-to  border-black rounded-md px-3 py-2 w-14 sm:w-20"
       >
         {value}
       </div>
