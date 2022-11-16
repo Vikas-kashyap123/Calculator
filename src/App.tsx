@@ -43,12 +43,6 @@ const App = () => {
     }
   };
 
-  const CanelClick = () => {
-    expression.pop();
-    const newExpression = [...expression];
-    setExpression(newExpression);
-  };
-
   return (
     <div className="sm:w-96 w-56 mx-auto border-2 bg-gradient-to-r from-cyan-200 to-blue-500 rounded-sm bg-gray-200 mt-16  sm:mt-28 justify-center hover:cursor-pointer ">
       <h1 className="text-2xl font-bold text-indigo-700">DG Calculator</h1>
@@ -64,13 +58,21 @@ const App = () => {
       </div>
       <div className="flex gap-3 justify-center items-center py-2 hover:cursor-pointer">
         <button
-          onClick={() => setExpression([""])}
+          onClick={() => {
+            setExpression([""]);
+            ringSound();
+          }}
           className="bg-red-500 rounded-md px-4 sm:px-10 py-2 "
         >
           A/C
         </button>
         <button
-          onClick={CanelClick}
+          onClick={() => {
+            ringSound();
+            expression.pop();
+            const newExpression = [...expression];
+            setExpression(newExpression);
+          }}
           className="bg-yellow-500 rounded-md sm:px-11 px-5 py-2 "
         >
           C
