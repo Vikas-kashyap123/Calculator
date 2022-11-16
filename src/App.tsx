@@ -19,11 +19,18 @@ const App = () => {
     ".",
     "=",
   ];
+  const audio = new Audio(
+    "https://s3.amazonaws.com/freecodecamp/drums/side_stick_1.mp3"
+  );
+  const ringSound = () => {
+    audio.play();
+  };
 
   // const [number, setNumber] = useState();
   const [expression, setExpression] = useState<string[]>([]);
 
   const onButtonClick = (e: any) => {
+    ringSound();
     let newValue = e.target.getAttribute("data-cell-index");
     if (newValue === "X") {
       newValue = "*";
