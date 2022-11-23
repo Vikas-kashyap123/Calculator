@@ -4,7 +4,7 @@ type ButtonProps = { value: any; onClick(e: any): void };
 
 const Button: FC<ButtonProps> = ({ value, onClick }) => {
   return (
-    <div className="sm:mx-4 mx-1">
+    <div className="sm:mx-auto flex items-center justify-center my-1 mx-1">
       <div
         data-cell-index={value}
         onClick={onClick}

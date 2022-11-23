@@ -27,7 +27,7 @@ const App = () => {
   };
 
   // const [number, setNumber] = useState();
-  const [expression, setExpression] = useState<string[]>([]);
+  const [expression, setExpression] = useState<string[]>([""]);
 
   const onButtonClick = (e: any) => {
     ringSound();
@@ -36,7 +36,8 @@ const App = () => {
       newValue = "*";
     }
     if (newValue === "=") {
-      setExpression(eval(expression.join("")));
+      const xyz = expression.join("");
+      setExpression([eval(xyz)]);
     } else {
       const newExpression = [...expression, newValue];
       setExpression(newExpression);
@@ -46,6 +47,7 @@ const App = () => {
   return (
     <div className="sm:w-96 w-56 mx-auto border-2 bg-gradient-to-r from-cyan-200 to-blue-500 rounded-sm bg-gray-200 mt-16  sm:mt-28 justify-center  ">
       <h1 className="text-2xl font-bold text-indigo-700">DG Calculator</h1>
+      <h2>Time {new Date().toLocaleTimeString()}</h2>
       <div className="hover:hover:cursor-pointer hover:scale-105 object-cover flex mx-1 flex-row-reverse px-5 mb-2 h-10 sm:h-16 text-2xl font-bold items-center sm:text-3xl border border-gray-500 py-4">
         {expression}
       </div>
@@ -70,8 +72,7 @@ const App = () => {
           onClick={() => {
             ringSound();
             expression.pop();
-            const newExpression = [...expression];
-            setExpression(newExpression);
+            setExpression([...expression]);
           }}
           className="bg-yellow-500 rounded-md sm:px-11 px-5 py-2 hover:hover:cursor-pointer hover:scale-105 "
         >
@@ -81,5 +82,6 @@ const App = () => {
     </div>
   );
 };
+setInterval(App, 1000);
 
 export default App;
